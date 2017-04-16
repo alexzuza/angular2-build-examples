@@ -1,0 +1,7 @@
+node_modules
+aot
+dist
+*.ngfactory.ts
+*ngsummary.json
+.idea
+.vscode
