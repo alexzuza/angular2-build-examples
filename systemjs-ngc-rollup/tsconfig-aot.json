@@ -21,6 +21,6 @@
 
   "angularCompilerOptions": {
     "genDir": "",
-    "skipMetadataEmit" : false
+    "skipMetadataEmit" : true
   }
 }

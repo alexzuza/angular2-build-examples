@@ -1,6 +1,7 @@
 node_modules
 aot
 dist
+build
 *.ngfactory.ts
 *ngsummary.json
 .idea
