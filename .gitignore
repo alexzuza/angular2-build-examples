@@ -2,6 +2,7 @@ node_modules
 aot
 dist
 build
+wwwroot
 *.ngfactory.ts
 *ngsummary.json
 .idea

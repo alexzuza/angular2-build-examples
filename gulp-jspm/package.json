@@ -1,0 +1,39 @@
+{
+  "name": "angular2-gulp-quickstart",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "npm run build && npm run lite",
+    "tsc": "tsc",
+    "tsc:w": "tsc -w",
+    "lite": "lite-server",
+    "build": "rimraf wwwroot && tsc && gulp"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "@angular/common": "^4.0.2",
+    "@angular/compiler": "^4.0.2",
+    "@angular/core": "^4.0.2",
+    "@angular/forms": "^4.0.2",
+    "@angular/http": "^4.0.2",
+    "@angular/platform-browser": "^4.0.2",
+    "@angular/platform-browser-dynamic": "^4.0.2",
+    "@angular/router": "^4.0.2",
+    "core-js": "^2.4.1",
+    "rxjs": "^5.0.1",
+    "zone.js": "^0.8.5"
+  },
+  "devDependencies": {
+    "systemjs": "0.19.41",
+    "@types/node": "^7.0.7",
+    "concurrently": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-jspm-build": "0.0.15",
+    "gulp-typescript": "^2.12.1",
+    "gulp-uglify": "^1.5.3",
+    "lite-server": "^2.1.0",
+    "rimraf": "^2.6.1",
+    "typescript": "^2.2.2",
+    "uglify": "^0.1.5"
+  }
+}
