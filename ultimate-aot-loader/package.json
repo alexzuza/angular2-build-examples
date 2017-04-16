@@ -1,0 +1,38 @@
+{
+  "name": "ultimate-aot-plugin",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server",
+    "prod": "set NODE_ENV=production& webpack-dev-server --config webpack.prod.js",
+    "build:prod": "set NODE_ENV=production& webpack --config webpack.prod.js",
+    "cleanup": "rimraf build"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@angular/common": "^4.0.2",
+    "@angular/compiler": "^4.0.2",
+    "@angular/core": "^4.0.2",
+    "@angular/platform-browser": "^4.0.2",
+    "@angular/platform-browser-dynamic": "^4.0.2",
+    "@angular/router": "^4.0.2",
+    "core-js": "^2.4.1",
+    "rxjs": "^5.3.0",
+    "zone.js": "^0.8.5"
+  },
+  "devDependencies": {
+    "@angular/compiler-cli": "^4.0.2",
+    "@types/node": "^7.0.12",
+    "@ultimate/aot-loader": "^0.1.15",
+    "angular2-template-loader": "^0.6.2",
+    "awesome-typescript-loader": "^3.1.2",
+    "copy-webpack-plugin": "^4.0.1",
+    "extract-text-webpack-plugin": "^2.1.0",
+    "html-loader": "^0.4.5",
+    "typescript": "^2.2.2",
+    "webpack": "^2.4.1",
+    "webpack-dev-server": "^2.4.2"
+  }
+}

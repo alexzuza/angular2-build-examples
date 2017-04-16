@@ -1,0 +1,32 @@
+{
+  "compilerOptions": {
+    "baseUrl": "",
+    "target": "es5",
+    "module": "es2015",
+    "moduleResolution": "node",
+    "noImplicitAny": false,
+    "sourceMap": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "outDir": "./build",
+    "rootDir": "./src/app",
+    "skipLibCheck": true,
+    "typeRoots": [ "./node_modules/@types" ]
+  },
+  "compileOnSave": false,
+  "buildOnSave": false,
+  "exclude": [
+    "node_modules",
+    "dist",
+    "**/*.ngfactory.ts",
+    "src/app/polyfill.ts"
+  ],
+  "awesomeTypescriptLoaderOptions": {
+    "forkChecker": true,
+    "useWebpackText": true
+  },
+  "angularCompilerOptions": {
+    "genDir": ".",
+    "entryModule": "src/app/app.module#AppModule"
+  }
+}
