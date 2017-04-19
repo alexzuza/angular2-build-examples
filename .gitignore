@@ -3,7 +3,11 @@ aot
 dist
 build
 wwwroot
+*/src/**/*.js
+*/src/**/*.js.map
 *.ngfactory.ts
 *ngsummary.json
 .idea
 .vscode
+build-jit
+build-aot

@@ -1,4 +1,4 @@
 {
   "port": "8000",
-  "startPath":"/index-aot.html"
+  "startPath":"/index.aot.html"
 }

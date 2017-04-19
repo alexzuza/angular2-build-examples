@@ -1,0 +1,5 @@
+{
+  "baseDir": "build-jit",
+  "port": "9000",
+  "startPath":"/index.jit.html"
+}
