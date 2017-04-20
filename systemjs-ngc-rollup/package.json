@@ -10,13 +10,13 @@
     "start": "concurrently \"npm run build:watch\" \"npm run serve\"",
 
     "clean:jit": "rimraf build-jit",
-    "copy:jit": "copyfiles -f \"src/**/*.html\" build-jit",
+    "copy:jit": "copyfiles -f src/**/*.html build-jit",
     "build:jit": "npm run clean:jit && npm run copy:jit && tsc -p tsconfig.jit.json && rollup -c rollup-config.jit.js",
     "serve:jit": "lite-server -c bs-config.jit.json",
 
     "check:jit": "source-map-explorer build-jit/build.js",
 
-    "clean:aot": "rimraf \"src/**/*.{ngfactory.ts,js,js.map,metadata.json,ngsummary.json}\" aot build-aot",
+    "clean:aot": "rimraf src/**/*.{ngfactory.ts,js,js.map,metadata.json,ngsummary.json} aot build-aot",
     "build:aot": "npm run clean:aot && ngc -p tsconfig.aot.json && rollup -c rollup-config.aot.js",
     "serve:aot": "lite-server -c bs-config.aot.json",
 
