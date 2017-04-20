@@ -27,7 +27,7 @@
   "exclude": [
     "node_modules",
     "dist/aot",
-    "src/app/main.browser.aot.ts"
+    "src/main.aot.ts"
   ],
   "awesomeTypescriptLoaderOptions": {
     "useCache": true,

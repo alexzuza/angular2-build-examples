@@ -9,6 +9,8 @@ if (DLL) {
   module.exports = require('./config/webpack.dll');
 } else if (DEV) {
   module.exports = require('./config/webpack.dev');
+} else if (PROD) {
+  module.exports = require('./config/webpack.prod');
 } else {
   throw "Unknown webpack configuration.";
 }

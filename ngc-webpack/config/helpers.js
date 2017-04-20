@@ -8,5 +8,13 @@ function root(args) {
   return path.join.apply(path, [_root].concat(args));
 }
 
+const highPriorityChunks = ['polyfills', 'common'];// later, higher
+function sortChunks (prev, next) {
+    const prevName = prev.names[0];
+    const nextName = next.names[0];
+
+    return highPriorityChunks.indexOf(prevName) < highPriorityChunks.indexOf(nextName);
+}
 
 exports.root = root;
+exports.sortChunks = sortChunks;

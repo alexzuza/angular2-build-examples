@@ -1,18 +1,17 @@
 const { EXCLUDE_SOURCE_MAPS, SRC_DIR} = require('./constants');
 const webpack = require('webpack');
 const { root, sortChunks } = require('./helpers.js');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
+
 const NamedModulesPlugin = require('webpack/lib/NamedModulesPlugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const EVENT = process.env.npm_lifecycle_event || '';
-const AOT = EVENT.includes('aot');
+const AOT = EVENT.includes('prod');
 
 
 module.exports = {
     entry: {
-        app: root(SRC_DIR + '/main.browser' + (AOT ? '.aot' : '')),
-        polyfills: root(SRC_DIR + '/polyfills.browser' + (AOT ? '.aot' : '')),
-        vendors: root(SRC_DIR + '/vendors')
+        app: root(SRC_DIR + '/main' + (AOT ? '.aot' : '')),
+        polyfills: root(SRC_DIR + '/polyfills' + (AOT ? '.aot' : ''))
     },
 
     resolve: {
@@ -24,15 +23,12 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.ts$/,
-                loader: 'tslint-loader',
-                enforce: 'pre',
-                exclude: /(node_modules|output)/
-            },
-            {
                 test: /\.js$/,
                 loader: 'source-map-loader',
-                exclude: [EXCLUDE_SOURCE_MAPS]
+                exclude: [
+                    root('node_modules/@angular'),
+                    root('node_modules/rxjs')
+                ]
             },
             {test: /\.json$/, loader: 'json-loader'},
             {test: /\.html/, loader: 'raw-loader'},
@@ -56,7 +52,7 @@ module.exports = {
             title: 'index',
             filename: 'index.html',
             template: root(SRC_DIR + '/index.html'),
-            chunks: ['app', 'polyfills', 'vendors'],
+            chunks: ['app', 'polyfills'],
             chunksSortMode: sortChunks
         })
     ],
