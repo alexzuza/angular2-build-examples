@@ -1,0 +1,36 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "declaration": false,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "lib": ["es2015", "dom"],
+    "noEmitHelpers": true,
+    "skipDefaultLibCheck": true,
+    "pretty": true,
+    "sourceMap": true,
+    "strictNullChecks": false,
+    "allowUnreachableCode": false,
+    "allowUnusedLabels": false,
+    "noImplicitAny": false,
+    "noImplicitReturns": true,
+    "noImplicitUseStrict": false,
+    "noFallthroughCasesInSwitch": true,
+    "noUnusedParameters": false,
+    "noUnusedLocals": false,
+    "outDir": "dist/",
+    "typeRoots": [
+      "./node_modules/@types"
+    ]
+  },
+  "exclude": [
+    "node_modules",
+    "dist/aot",
+    "src/app/main.browser.aot.ts"
+  ],
+  "awesomeTypescriptLoaderOptions": {
+    "useCache": true,
+    "cacheDirectory": "./dist/awcache"
+  }
+}
