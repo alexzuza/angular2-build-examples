@@ -1,15 +1,24 @@
-import { NgModule, ApplicationRef } from '@angular/core';
+import { NgModule, ApplicationRef, Compiler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { removeNgStyles, createNewHosts, createInputTransfer } from '@angularclass/hmr';
+import { JitCompilerFactory } from '@angular/compiler';
 
 import { AppComponent } from './app.component';
 import { ChildComponent } from './child/child.component';
+import { HtmlOutlet } from './html-outlet';
+
+
+export function createJitCompiler () {
+    return new JitCompilerFactory([{useDebug: false, useJit: true}]).createCompiler();
+}
 
 @NgModule({
     imports: [BrowserModule],
     exports: [],
-    declarations: [AppComponent, ChildComponent],
-    providers: [],
+    declarations: [AppComponent, ChildComponent, HtmlOutlet],
+    providers: [
+        { provide: Compiler, useFactory: createJitCompiler}
+    ],
     bootstrap: [AppComponent]
 })
 export class AppModule {

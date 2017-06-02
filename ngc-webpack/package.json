@@ -10,26 +10,29 @@
 
     "build:ngc": "npm run clean:ngc && ngc -p tsconfig.aot.json",
     "build:prod": "npm run build:ngc && npm run clean:prod && webpack",
+    "serve:prod": "node config/prod.server",
     
     "clean:dll": "rimraf dist/dll",
     "clean:awcache": "rimraf dist/awcache",
     "clean:ngc": "rimraf dist/aot",
-    "clean:prod": "npm run clean:awcache && rimraf dist/prod"
+    "clean:prod": "npm run clean:awcache && rimraf dist/prod",
+
+    "postinstall": "npm run build:dll"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@angular/common": "^4.0.2",
-    "@angular/compiler": "^4.0.2",
-    "@angular/core": "^4.0.2",
-    "@angular/platform-browser": "^4.0.2",
-    "@angular/platform-browser-dynamic": "^4.0.2",
+    "@angular/common": "^4.1.3",
+    "@angular/compiler": "^4.1.3",
+    "@angular/core": "^4.1.3",
+    "@angular/platform-browser": "^4.1.3",
+    "@angular/platform-browser-dynamic": "^4.1.3",
     "core-js": "^2.4.1",
     "rxjs": "^5.3.0",
-    "zone.js": "^0.8.5"
+    "zone.js": "^0.8.10"
   },
   "devDependencies": {
-    "@angular/compiler-cli": "^4.0.2",
+    "@angular/compiler-cli": "^4.1.3",
     "@angularclass/hmr": "1.2.2",
     "@angularclass/hmr-loader": "3.0.2",
     "@types/node": "^7.0.13",
@@ -43,9 +46,12 @@
     "source-map-explorer": "^1.3.3",
     "source-map-loader": "^0.2.1",
     "ts-helpers": "^1.1.2",
-    "typescript": "^2.2.2",
+    "typescript": "^2.3.2",
     "webpack": "^2.4.1",
     "webpack-dev-server": "^2.4.2",
-    "webpack-merge": "^4.1.0"
+    "webpack-merge": "^4.1.0",
+    "express": "4.15.2",
+    "open": "0.0.5",
+    "compression": "1.6.2"
   }
 }
