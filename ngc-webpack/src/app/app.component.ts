@@ -5,5 +5,7 @@ import { Component } from '@angular/core';
     templateUrl: './app.component.html'
 })
 export class AppComponent {
-   value = `<span>Test interpolation {{5 + 6}}</span>`;
+   value = `
+        <span>Test interpolation {{5 + 6}}</span>
+        <custom-comp [foo]="'bar'"></custom-comp>`;
 }

@@ -11,13 +11,13 @@ import {
     ReflectiveInjector
 } from '@angular/core';
 
-import { CommonModule } from '@angular/common';
+import { SharedModule } from './shared.module';
 
 export function createComponentFactory(compiler: Compiler, metadata: Component): Promise<ComponentFactory<any>> {
     const cmpClass = class DynamicComponent {};
     const decoratedCmp = Component(metadata)(cmpClass);
 
-    @NgModule({ imports: [CommonModule], declarations: [decoratedCmp] })
+    @NgModule({ imports: [SharedModule], declarations: [decoratedCmp] })
     class DynamicHtmlModule { }
 
     return compiler.compileModuleAndAllComponentsAsync(DynamicHtmlModule)
