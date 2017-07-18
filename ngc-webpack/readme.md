@@ -15,7 +15,7 @@ The key point here is running the Angular command line offline compiler `ngc` be
 
 Run `npm start`
 
-## Build 
+## Production Build 
 
 Run `npm run build:prod`
 
