@@ -1,4 +1,4 @@
-# Example of Angular2 AOT compilation with webpack with support JitCompiler.
+# Example of Angular2 AOT compilation with webpack and support JitCompiler.
 
 It also allows us to use JitCompiler with AoT. 
 
